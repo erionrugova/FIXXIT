@@ -18,7 +18,6 @@ export default function FixItHome() {
         </nav>
       </header>
 
-    
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -28,3 +27,41 @@ export default function FixItHome() {
         <p className="text-lg mb-6">Rezervo shpejt montues, elektricistë, hidraulikë dhe shumë më tepër.</p>
         <Button className="text-lg px-6 py-3 rounded-2xl">Rezervo Tani</Button>
       </motion.section>
+       {/* Services */}
+      <section id="services" className="grid md:grid-cols-3 gap-6 mb-10">
+        {[
+          { title: "Elektricist", icon: Wrench },
+          { title: "Hidraulik", icon: Home },
+          { title: "Montim Mobiljesh", icon: Calendar },
+        ].map((service, i) => (
+          <Card key={i} className="shadow-xl rounded-2xl">
+            <CardContent className="p-6 text-center">
+              <service.icon className="mx-auto w-12 h-12 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <Button className="rounded-xl mt-2 w-full">Rezervo</Button>
+            </CardContent>
+          </Card>
+        ))}
+      </section>
+
+      {/* Booking */}
+      <section id="booking" className="bg-white p-8 rounded-2xl shadow mb-10">
+        <h2 className="text-3xl font-bold mb-4">Rezervo një shërbim</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Input placeholder="Emri dhe mbiemri" className="p-3" />
+          <Input placeholder="Adresa" className="p-3" />
+          <Input placeholder="Lloji i shërbimit" className="p-3" />
+          <Input placeholder="Data e dëshiruar" className="p-3" />
+        </div>
+        <Button className="mt-6 w-full text-lg rounded-2xl">Dërgo kërkesën</Button>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="bg-white p-8 rounded-2xl shadow mb-10">
+        <h2 className="text-3xl font-bold mb-4">Kontakti</h2>
+        <p className="text-lg mb-2 flex items-center gap-2"><Phone /> +383 44 000 000</p>
+        <p className="text-lg">Email: info@fixit.com</p>
+      </section>
+    </div>
+  );
+}
