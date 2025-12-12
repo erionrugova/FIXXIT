@@ -1,0 +1,30 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { motion } from "framer-motion";
+import { Wrench, Home, Calendar, Phone } from "lucide-react";
+
+export default function FixItHome() {
+  return (
+    <div className="min-h-screen bg-gray-100 p-6">
+      
+      <header className="flex items-center justify-between p-4 bg-white shadow rounded-2xl mb-6">
+        <h1 className="text-3xl font-bold flex items-center gap-2">FixIt <Wrench /></h1>
+        <nav className="flex gap-6 text-lg">
+          <a href="#services" className="hover:text-blue-600">Shërbimet</a>
+          <a href="#booking" className="hover:text-blue-600">Rezervimi</a>
+          <a href="#contact" className="hover:text-blue-600">Kontakti</a>
+        </nav>
+      </header>
+
+    
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="bg-white p-10 rounded-2xl shadow text-center mb-10"
+      >
+        <h2 className="text-4xl font-semibold mb-4">Riparime në shtëpi, me një klik!</h2>
+        <p className="text-lg mb-6">Rezervo shpejt montues, elektricistë, hidraulikë dhe shumë më tepër.</p>
+        <Button className="text-lg px-6 py-3 rounded-2xl">Rezervo Tani</Button>
+      </motion.section>
